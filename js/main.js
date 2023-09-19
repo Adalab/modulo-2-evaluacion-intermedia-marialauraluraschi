@@ -60,7 +60,7 @@ function score(){
         scoreMsg.innerHTML= '¡Has perdido!';
         pcScore++;
     }
-
+    initial();
 }
 
 function handleClick(event){
