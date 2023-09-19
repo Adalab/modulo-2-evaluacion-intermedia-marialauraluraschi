@@ -10,8 +10,8 @@ let playerScore= 0;
 let pcScore= 0;
 
 function initial(){
-    player.innerHTML+=`${playerScore}`;
-    pc.innerHTML+=`${pcScore}`;
+    player.innerHTML=`Jugador: ${playerScore}`;
+    pc.innerHTML=`Computadora: ${pcScore}`;
 }
 initial()
 
@@ -43,11 +43,12 @@ function compare(){
         (playerSelection === 'tijera' && pcSelection === 'papel')
     ) {
         scoreMsg.innerHTML= '¡Has ganado!';
-        // playerScore++;
+        playerScore++;
     } else {
         scoreMsg.innerHTML= '¡Has perdido!';
-        // pcScore++;
+        pcScore++;
     }
+    initial();
 }
 
 function handleClick(event){
