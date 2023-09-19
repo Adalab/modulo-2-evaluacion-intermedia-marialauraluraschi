@@ -5,7 +5,7 @@ const btn= document.querySelector('.js-btn');
 const scoreMsg= document.querySelector('.js-score');
 const player= document.querySelector('.js-player');
 const pc= document.querySelector('.js-pc');
-
+const playerSelection= select.value;
 let playerScore= 0;
 let pcScore= 0;
 
@@ -31,7 +31,7 @@ function pcSelection() {
 }
 
 function compare() {
-    // const playerSelection=select.value;
+    
     if (playerSelection === pcSelection) {
         return 'Empate';
     } else if (
