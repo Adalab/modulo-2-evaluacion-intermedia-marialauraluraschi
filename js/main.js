@@ -2,7 +2,7 @@
 
 const select= document.querySelector('.js-select');
 const btn= document.querySelector('.js-btn');
-const score= document.querySelector('.js-score');
+const scoreMsg= document.querySelector('.js-score');
 const player= document.querySelector('.js-player');
 const pc= document.querySelector('.js-pc');
 
@@ -13,6 +13,7 @@ function initial(){
     player.innerHTML+=`${playerScore}`;
     pc.innerHTML+=`${pcScore}`;
 }
+initial()
 
 function getRandomNumber(max) {
     return Math.ceil(Math.random() * max);
@@ -49,15 +50,15 @@ function compare() {
 
 function score(){
     if (compare==='Empate'){
-        score.innerHTML= 'Empate';
+        scoreMsg.innerHTML= 'Empate';
     }
     else if (compare==='¡Has Ganado!'){
-        score.innerHTML= '¡Has Ganado!';
-        playerScore+= 1;
+        scoreMsg.innerHTML= '¡Has Ganado!';
+        playerScore++;
     }
     else {
-        score.innerHTML= '¡Has perdido!';
-        pcScore+= 1;
+        scoreMsg.innerHTML= '¡Has perdido!';
+        pcScore++;
     }
 
 }
