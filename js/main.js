@@ -30,11 +30,8 @@ function pcSelection() {
     }
 }
 
-function playerSelection(){
-    const playerSelection=select.value;
-}
-
 function compare() {
+    // const playerSelection=select.value;
     if (playerSelection === pcSelection) {
         return 'Empate';
     } else if (
@@ -65,10 +62,8 @@ function score(){
 
 function handleClick(event){
     event.preventDefault();
-    pcSelection();
-    playerSelection();
-    compare();
-    score();
+    console.log(pcSelection());
+    console.log(select.value);
 }
 
 btn.addEventListener('click', handleClick);
