@@ -5,9 +5,8 @@ const btn= document.querySelector('.js-btn');
 const score= document.querySelector('.js-score');
 const player= document.querySelector('.js-player');
 const pc= document.querySelector('.js-pc');
-
-let playerScore= 0;
-let pcScore=0;
+let playerScore= player.value;
+let pcScore= pc.value;
 
 function getRandomNumber(max) {
     return Math.ceil(Math.random() * max);
@@ -30,28 +29,24 @@ function playerSelection(){
 
 function compare() {
     if (playerSelection === pcSelection) {
-        return 'Empate';
+        score.innerHTML= 'Empate';
     } else if (
         (playerSelection === 'piedra' && pcSelection === 'tijera') ||
         (playerSelection === 'papel' && pcSelection === 'piedra') ||
         (playerSelection === 'tijera' && pcSelection === 'papel')
     ) {
-        return '¡Has Ganado!';
+        score.innerHTML= '¡Has Ganado!';
     } else {
-        return '¡Has perdido!';
+        score.innerHTML= '¡Has perdido!';
     }
 }
 
-function (score){
-
-}
 
 function handleClick(event){
     event.preventDefault();
     pcSelection();
     playerSelection();
     compare();
-    score();
 }
 
 btn.addEventListener('click', handleClick);
