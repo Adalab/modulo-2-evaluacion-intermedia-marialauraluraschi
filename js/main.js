@@ -5,7 +5,7 @@ const btn= document.querySelector('.js-btn');
 const scoreMsg= document.querySelector('.js-score');
 const player= document.querySelector('.js-player');
 const pc= document.querySelector('.js-pc');
-const playerSelection= select.value;
+
 let playerScore= 0;
 let pcScore= 0;
 
@@ -19,7 +19,7 @@ function getRandomNumber(max) {
     return Math.ceil(Math.random() * max);
    }
 
-function pcSelection() {
+function pcSelect() {
     const randNum = getRandomNumber(9);
     if (randNum <= 3) {
         return 'piedra';
@@ -30,40 +30,29 @@ function pcSelection() {
     }
 }
 
-function compare() {
-    
+function compare(){
+    const playerSelection= select.value;
+    const pcSelection= pcSelect();
+    console.log(pcSelection);
+    console.log(playerSelection);
     if (playerSelection === pcSelection) {
-        return 'Empate';
+        scoreMsg.innerHTML= 'Empate';
     } else if (
         (playerSelection === 'piedra' && pcSelection === 'tijera') ||
         (playerSelection === 'papel' && pcSelection === 'piedra') ||
         (playerSelection === 'tijera' && pcSelection === 'papel')
     ) {
-        return '¡Has Ganado!';
+        scoreMsg.innerHTML= '¡Has ganado!';
+        // playerScore++;
     } else {
-        return '¡Has perdido!';
-    }
-}
-
-function score(){
-    if (compare==='Empate'){
-        scoreMsg.innerHTML= 'Empate';
-    }
-    else if (compare==='¡Has Ganado!'){
-        scoreMsg.innerHTML= '¡Has Ganado!';
-        playerScore++;
-    }
-    else {
         scoreMsg.innerHTML= '¡Has perdido!';
-        pcScore++;
+        // pcScore++;
     }
-    initial();
 }
 
 function handleClick(event){
     event.preventDefault();
-    console.log(pcSelection());
-    console.log(select.value);
+    compare();
 }
 
 btn.addEventListener('click', handleClick);
