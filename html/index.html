@@ -8,14 +8,16 @@
 <body> 
     <h1>Piedra, pape o tijera</h1>
     <h2>Introduce aquí tu jugada</h2>
-    <label>
-        <select name="" id="">
-            <option value="">Piedra</option>
-            <option value="">papel</option>
-            <option value="">Tijera</option>
-        </select>Jugar</label>
-    <span>¡Vamos a jugar!</span>
-    <span>Jugador: 0</span>
-    <span>Computadora: 0</span>
+    <form>
+        <select class="js-select" name="juego">
+            <option value="piedra">Piedra</option>
+            <option value="papel">papel</option>
+            <option value="tijera">Tijera</option>
+        </select>
+        <button class="js-btn">Jugar</button>
+    </form>
+    <span class="js-score">¡Vamos a jugar!</span>
+    <span class="js-player">Jugador: 0</span>
+    <span class="js-pc">Computadora: 0</span>
 </body>
 </html>
