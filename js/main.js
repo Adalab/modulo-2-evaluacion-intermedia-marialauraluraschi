@@ -24,13 +24,34 @@ function pcSelection() {
     }
 }
 
-function play(){
+function playerSelection(){
     const playerSelection=select.value;
+}
+
+function compare() {
+    if (playerSelection === pcSelection) {
+        return 'Empate';
+    } else if (
+        (playerSelection === 'piedra' && pcSelection === 'tijera') ||
+        (playerSelection === 'papel' && pcSelection === 'piedra') ||
+        (playerSelection === 'tijera' && pcSelection === 'papel')
+    ) {
+        return '¡Has Ganado!';
+    } else {
+        return '¡Has perdido!';
+    }
+}
+
+function (score){
+
 }
 
 function handleClick(event){
     event.preventDefault();
-    play();
+    pcSelection();
+    playerSelection();
+    compare();
+    score();
 }
 
 btn.addEventListener('click', handleClick);
